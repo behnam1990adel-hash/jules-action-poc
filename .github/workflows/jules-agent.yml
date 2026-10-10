@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Jules on issue content
-        uses: google-labs-code/jules-action@v1
+        uses: google-labs-code/jules-invoke@v1
         with:
-          api_key: ${{ secrets.JULES_API_KEY }}
-          repo: ${{ github.repository }}
           prompt: ${{ github.event.issue.body }}
-          source_branch: main
+          jules_api_key: ${{ secrets.JULES_API_KEY }}
+          starting_branch: main
